@@ -1,13 +1,20 @@
-# NLPFinancialStatements
+# NLP Financial Statements
+**view code: [NLPFinancialStatements.ipynb](NLPFinancialStatements.ipynb)**
 
 NLP analysis of 10-Ks from a hand-full of companies. A Form 10-K is an annual report required by the U.S. Securities and Exchange Commission, that gives a comprehensive summary of a company's financial performance. A firm's active change in their reporting practices is an important signal about future firm operations. By measuring the 10-K similarities from one year to the next, we can generate an alpha factor. This methodology was introduced in a paper called _Lazy Prices_.
 
-Using _Loghran-McDonald Sentiment Word List_ categories are the vocabulary of a TFIDF for each 10-K. The cosine similarity is then measured from one year to the next per company. If the 10-K is different from one year to the next across any category, this signifies a change in operations.
-
-![](img/amzn_csine.png)
-![](img/hon_csine.png)
+Build a TFIDF with each category from _Loghran-McDonald Sentiment Word List_ as the vocabulary from each 10-K, then measure the cosine similarity of a 10-K from one year to the next per company.
 
 The cosine similarity from year to year is the factor ran against yearly pricing data of each stock. The price data came from [Alpha Vantage](https://www.alphavantage.co).
+
+![](img/amzn_csine.png)
+
+![](img/amzn_price.png)
+
+
+![](img/hon_csine.png)
+
+![](img/hon_price.png)
 
 The ```alphalens``` library calculates the forward returns to determine the validity of the proposed factors.
 
